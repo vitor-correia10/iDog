@@ -1,0 +1,16 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding: 0 30px;
+	background: var(--primaryColor);
+}
+
+img.logo {
+	width: 100px;
+}
+
+.dogs-list {
+	font-size: 30px;
+}

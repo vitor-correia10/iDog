@@ -1,9 +1,16 @@
 import React from "react";
+
+//Components
 import FetchDogs from '../fetchDogs';
+import Header from '../header';
+
 
 const Home = () => {
   return (
-    <FetchDogs />
+    <>
+      <Header />
+      <FetchDogs />
+    </>
   )
 }
 
