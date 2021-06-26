@@ -1,12 +1,16 @@
 import React from "react";
-// import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+
+//components
 import Loading from '../loading';
+import { selectedBreed } from '../../Actions';
 // import './fetchDogs.css';
 
 const FetchDogs = () => {
   const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
   const [breedImages, setBreedImages] = React.useState([]);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     const fetchBreeds = async () => {
@@ -38,8 +42,10 @@ const FetchDogs = () => {
   //fetch images by breed
   const handleBreed = async (breed) => {
     let breedSelected = breed.target.value.toLowerCase();
-
+    
     if (breedSelected !== "choose a dog breed"){
+      dispatch(selectedBreed(breedSelected, 'breed'));
+      
       const url = (`https://dog.ceo/api/breed/${breedSelected}/images`);
       const res = await fetch(url);
       const dogBreed = await res.json();
