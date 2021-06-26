@@ -1,0 +1,26 @@
+.pageContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background: var(--black);
+}
+
+.errorTitle {
+	color: var(--primaryColor);
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+}
+
+.errorSubtitle {
+	color: var(--white);
+	font-size: 18px;
+}
+
+.styledLink {
+	text-decoration: none;
+	color: var(--secondaryColor);
+}

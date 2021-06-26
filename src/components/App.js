@@ -8,6 +8,7 @@ import "./App.css";
 
 //Components
 import Home from "./home";
+import FourOhFour from "./fourOhFour";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home/>
+        </Route>
+        <Route path="*">
+          <FourOhFour />
         </Route>
       </Switch>
     </Router>
