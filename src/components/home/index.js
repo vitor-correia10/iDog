@@ -1,8 +1,9 @@
 import React from "react";
+import FetchDogs from '../fetchDogs';
 
 const Home = () => {
   return (
-    <div>Hello world!</div>
+    <FetchDogs />
   )
 }
 
