@@ -1,16 +1,17 @@
-import React from 'react';
-import idog from '../assets/idog.png';
+import React from "react";
+import { NavLink } from "react-router-dom"
+import idog from "../assets/idog.png";
 import { SiDatadog } from "react-icons/si";
-import './Header.css';
+import "./Header.css";
 
 function Header() {
   return (
     <header>
+      <NavLink to="/">
+          <img src={idog} alt="iDog Logo" className="logo"/>
+        </NavLink>
       <div>
-          <img src={idog} alt="iDog Logo" class="logo"/>
-      </div>
-      <div>
-        <SiDatadog class="dogs-list"/>
+        <SiDatadog className="dogs-list"/>
       </div>
     </header>
   );

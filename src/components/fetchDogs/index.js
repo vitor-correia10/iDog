@@ -1,26 +1,27 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 //components
-import Loading from '../loading';
-import { selectedBreed } from '../../Actions';
-// import './fetchDogs.css';
+import Loading from "../loading";
+import { selectedBreed } from "../../Actions";
+// import "./fetchDogs.css";
 
 const FetchDogs = () => {
   const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
-  const [breedImages, setBreedImages] = React.useState([]);
   const dispatch = useDispatch();
+  const numOfImages = 12;
+  const breedImages = useSelector((state) => state.BreedData.images);
 
   React.useEffect(() => {
+    //fetch all breeds from the Dog API 
     const fetchBreeds = async () => {
       try{
-        //fetch all breeds from Dog API 
         const url = (`https://dog.ceo/api/breeds/list/all`);
         const res = await fetch(url);
         const dogBreeds = await res.json();
         
-        if (dogBreeds.status === 'success'){
+        if (dogBreeds.status === "success"){
           await makeBreedList(dogBreeds.message);
           setLoading(false);
         }
@@ -32,7 +33,7 @@ const FetchDogs = () => {
     
     fetchBreeds();
     
-    //create a array of breeds 
+    //update a array of breeds 
     const makeBreedList = (breeds) => {
       setBreedList(Object.keys(breeds));
     }
@@ -42,18 +43,25 @@ const FetchDogs = () => {
   //fetch images by breed
   const handleBreed = async (breed) => {
     let breedSelected = breed.target.value.toLowerCase();
+    let dogImagesArr = [];
     
     if (breedSelected !== "choose a dog breed"){
-      dispatch(selectedBreed(breedSelected, 'breed'));
+      //update redux with breed name
+      dispatch(selectedBreed(breedSelected, "breed"));
       
       const url = (`https://dog.ceo/api/breed/${breedSelected}/images`);
       const res = await fetch(url);
       const dogBreed = await res.json();
 
-      for (let i = 0; i <= 12; i++) {
-        setBreedImages(breedImages => [...breedImages, dogBreed.message[i]])
+      //push 12 images by breed to an empty array
+      for (let i = 0; i < numOfImages; i++) {
+        if (dogBreed.message[i]){
+          dogImagesArr.push(dogBreed.message[i]);
+        }
       }
     }
+    //update redux with breed images
+    dispatch(selectedBreed(dogImagesArr, "images"));
   }
 
   if (loading) {
@@ -78,7 +86,7 @@ const FetchDogs = () => {
         {
           breedImages.map((dogImage,i) => {
             return (
-              <img key={i} src={dogImage} alt={'Image ' + i}/>
+              <img key={i} src={dogImage} alt={"Image " + i}/>
             )
           })
         }

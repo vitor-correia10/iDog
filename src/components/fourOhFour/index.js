@@ -1,7 +1,7 @@
 import React from "react";
 import { BiError } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import './FourOhFour.css';
+import "./FourOhFour.css";
 
 const FourOhFour = () => {
   return (

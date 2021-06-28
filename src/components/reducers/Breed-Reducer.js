@@ -5,9 +5,7 @@ const initialState = {
 
 const BreedData = (state = initialState, action) => {
   switch (action.type) {
-      case 'SELECTED-BREED': {
-        console.log('key', action.key);
-        console.log('value', action.value);
+      case "SELECTED-BREED": {
         return {
           ...state,
           [action.key]: action.value
