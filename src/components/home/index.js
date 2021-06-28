@@ -1,16 +1,20 @@
 import React from "react";
 
-//Components
+//components
 import Header from "../header";
 import FetchDogs from "../fetchDogs";
 import DogsImages from "../dogsImages";
 
+//style
+import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <FetchDogs />
+      <div className="top-menu">
+        <Header />
+        <FetchDogs />
+      </div>
       <DogsImages />
     </>
   )

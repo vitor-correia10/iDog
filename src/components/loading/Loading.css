@@ -6,7 +6,7 @@
 	height: 100vh;
 }
 
-.styledLoading {
+.styled-loading {
 	animation: spin 3s infinite linear;
 }
 

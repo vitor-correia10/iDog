@@ -5,7 +5,7 @@ import "./Loading.css";
 const Loading = () => {
     return (
         <div className="loading">
-            <GiJumpingDog className="styledLoading"/>
+            <GiJumpingDog className="styled-loading"/>
         </div>
     );
 };

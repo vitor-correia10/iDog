@@ -5,17 +5,18 @@ import "./DogsImages.css";
 const DogsImages = () => {
   const breedImages = useSelector((state) => state.BreedData.images);
   return (
-    <>
-      <div>
-        {
-          breedImages.map((dogImage,i) => {
-            return (
-              <img key={i} src={dogImage} alt={"Image " + i}/>
-            )
-          })
-        }
-      </div>
-    </>
+    <main className="images-container">
+      {
+        breedImages.map((dogImage,i) => {
+          return (
+            <div key={i} className="box-Image">
+              <img src={dogImage} alt={"Image " + i}/>
+              <button type="button">Add to my list</button>
+            </div>
+          )
+        })
+      }
+    </main>
   );
 };
 

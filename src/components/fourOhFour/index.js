@@ -6,12 +6,12 @@ import "./FourOhFour.css";
 const FourOhFour = () => {
   return (
     <>
-      <div className="pageContainer">
-        <h1 className="errorTitle">
+      <div className="page-container">
+        <h1 className="error-title">
           <BiError /> Sorry, page not found <BiError />
         </h1>
-        <h3 className="errorSubtitle">
-          Click <Link className="styledLink" to="/">here</Link> to return home.
+        <h3 className="error-subtitle">
+          Click <Link className="styled-link" to="/">here</Link> to return home.
         </h3>
       </div>
     </>

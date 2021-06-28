@@ -68,8 +68,8 @@ const FetchDogs = () => {
   }
 
   return (
-    <div className="breedList">
-      <select className="breedSelector" onChange={e => handleBreed(e)}>
+    <div className="breed-list">
+      <select className="breed-selector" onChange={e => handleBreed(e)}>
         <option selected disabled value="Choose a dog breed">Choose a dog breed</option>
         {
           breedList.map((breed,i) => {

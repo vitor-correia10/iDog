@@ -1,4 +1,4 @@
-.pageContainer {
+.page-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -8,19 +8,19 @@
 	background: var(--black);
 }
 
-.errorTitle {
+.error-title {
 	color: var(--primaryColor);
 	display: flex;
 	align-items: center;
 	font-size: 24px;
 }
 
-.errorSubtitle {
+.error-subtitle {
 	color: var(--white);
 	font-size: 18px;
 }
 
-.styledLink {
+.styled-link {
 	text-decoration: none;
 	color: var(--secondaryColor);
 }
