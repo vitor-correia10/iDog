@@ -9,8 +9,10 @@ const DogsImages = () => {
       {
         breedImages.map((dogImage,i) => {
           return (
-            <div key={i} className="box-Image">
-              <img src={dogImage} alt={"Image " + i}/>
+            <div key={i} className="box-image">
+              <div className="background-image" 
+                style={{ backgroundImage: `url(${dogImage})`}}>
+              </div>
               <button type="button">Add to my list</button>
             </div>
           )
