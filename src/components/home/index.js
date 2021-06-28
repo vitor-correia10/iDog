@@ -1,8 +1,9 @@
 import React from "react";
 
 //Components
-import FetchDogs from "../fetchDogs";
 import Header from "../header";
+import FetchDogs from "../fetchDogs";
+import DogsImages from "../dogsImages";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       <Header />
       <FetchDogs />
+      <DogsImages />
     </>
   )
 }

@@ -1,17 +1,16 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 //components
 import Loading from "../loading";
 import { selectedBreed } from "../../Actions";
-// import "./fetchDogs.css";
+import "./FetchDogs.css";
 
 const FetchDogs = () => {
   const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
   const dispatch = useDispatch();
   const numOfImages = 12;
-  const breedImages = useSelector((state) => state.BreedData.images);
 
   React.useEffect(() => {
     //fetch all breeds from the Dog API 
@@ -69,29 +68,18 @@ const FetchDogs = () => {
   }
 
   return (
-    <>
-      <div className="breedsList">
-        <select onChange={e => handleBreed(e)}>
-          <option value="Choose a dog breed">Choose a dog breed</option>
-          {
-            breedList.map((breed,i) => {
-              return (
-                <option value={breed} key={i}>{breed}</option>
-              )
-            })
-          }
-        </select>
-      </div>
-      <div>
+    <div className="breedList">
+      <select className="breedSelector" onChange={e => handleBreed(e)}>
+        <option selected disabled value="Choose a dog breed">Choose a dog breed</option>
         {
-          breedImages.map((dogImage,i) => {
+          breedList.map((breed,i) => {
             return (
-              <img key={i} src={dogImage} alt={"Image " + i}/>
+              <option value={breed} key={i}>{breed}</option>
             )
           })
         }
-      </div>
-    </>
+      </select>
+    </div>
   );
 };
 
