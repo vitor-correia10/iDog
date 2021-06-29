@@ -15,7 +15,7 @@ select {
 .breed-list {
 	position: fixed;
 	display: flex;
-	top: 100px;
+	top: 90px;
 	align-items: center;
 	width: 100%;
 	height: 3em;

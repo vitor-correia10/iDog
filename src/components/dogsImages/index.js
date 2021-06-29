@@ -13,7 +13,7 @@ const DogsImages = () => {
               <div className="background-image" 
                 style={{ backgroundImage: `url(${dogImage})`}}>
               </div>
-              <button type="button">Add to my list</button>
+              <button className="add-to-list" type="button">Add to my list</button>
             </div>
           )
         })
