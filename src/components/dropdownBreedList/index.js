@@ -8,6 +8,26 @@ import Loading from "../loading";
 import { selectedBreed } from "../../Actions";
 import "./DropdownBreedList.css";
 
+//test if the API returns data
+function objectData(obj) {
+  if (typeof obj === 'object' && Object.keys(obj).length > 0) {
+    return Object.keys(obj).length;
+  } else {
+    return undefined
+  }
+}
+
+function expect(result, value) {
+  if (result === value) {
+    console.log('✅ Test succeeded');
+  } else {
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
+  }
+}
+//end test
+
 const DropdownBreedList = () => {
   const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
@@ -21,6 +41,9 @@ const DropdownBreedList = () => {
         const url = (`https://dog.ceo/api/breeds/list/all`);
         const res = await fetch(url);
         const dogBreeds = await res.json();
+
+        //call API test
+        expect(objectData(dogBreeds), Object.keys(dogBreeds).length);
         
         if (dogBreeds.status === "success"){
           await makeBreedList(dogBreeds.message);

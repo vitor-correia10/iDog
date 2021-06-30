@@ -12,8 +12,6 @@ const DogsImages = ({dogsData}) => {
   const dispatch = useDispatch();
   const myListObject = useSelector((state) => state.myListReducer);
   const myListArray = Object.keys(myListObject)
-
-  console.log('myListArray', myListArray);
   
   //update images' list with URLs
   const addToList = (url) =>{
