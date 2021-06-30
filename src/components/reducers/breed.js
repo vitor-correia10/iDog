@@ -3,7 +3,7 @@ const initialState = {
   images: [],
 };
 
-const BreedData = (state = initialState, action) => {
+const breedReducer = (state = initialState, action) => {
   switch (action.type) {
       case "SELECTED-BREED": {
         return {
@@ -17,4 +17,4 @@ const BreedData = (state = initialState, action) => {
   }
 }
 
-export default BreedData;
+export default breedReducer;
