@@ -17,9 +17,18 @@ function objectData(obj) {
   }
 }
 
-function expect(result, value) {
+//test if a breed has images
+function breedImageArray(imagesArray) {
+  if (imagesArray.length > 0) {
+    return true;
+  } else {
+    return undefined
+  }
+}
+
+function expect(result, value, name) {
   if (result === value) {
-    console.log('✅ API Test succeeded');
+    console.log(`✅ ${name} Test succeeded`);
   } else {
     console.log(
       `⛔️ Expected “${result}” to equal “${value}”`
@@ -43,7 +52,7 @@ const DropdownBreedList = () => {
         const dogBreeds = await res.json();
 
         //call API test
-        expect(objectData(dogBreeds), Object.keys(dogBreeds).length);
+        expect(objectData(dogBreeds), Object.keys(dogBreeds).length, "API");
         
         if (dogBreeds.status === "success"){
           await makeBreedList(dogBreeds.message);
@@ -86,6 +95,9 @@ const DropdownBreedList = () => {
     }
     //update redux with breed images
     dispatch(selectedBreed(dogImagesArr, "images"));
+
+    //call breed images - Redux test
+    expect(breedImageArray(dogImagesArr), dogImagesArr.length > 0, "Breed Images");
   }
 
   if (loading) {
