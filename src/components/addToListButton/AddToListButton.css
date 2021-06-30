@@ -1,15 +1,27 @@
 /*buttons*/
-.add-to-list {
+.btn {
 	transition: all 100ms ease-in 0s;
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 10px 15px;
 	font-size: 14px;
+	border: none;
+}
+
+.add-to-list {
 	background-color: var(--primaryColor);
 	box-shadow: var(--primaryColor) 0px 0px 10px;
-	border: none;
 }
 
 .add-to-list:hover {
 	background: var(--primaryLighterColor);
+}
+
+.remove-from-list {
+	background-color: var(--red);
+	box-shadow: var(--red) 0px 0px 10px;
+}
+
+.remove-from-list:hover {
+	background: var(--darkerRed);
 }

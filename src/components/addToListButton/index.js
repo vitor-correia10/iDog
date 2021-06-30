@@ -10,13 +10,15 @@ const AddToListButton = ({onClick, url}) => {
   return (
     <button 
       onClick={onClick}
-      disabled={isAddedToList}
-      className="add-to-list" 
+      className= {isAddedToList
+        ? "btn remove-from-list"
+        : "btn add-to-list"
+      }
       type="button"
     >
       {isAddedToList
-        ? "Remove to List"
-        : "Add to List"
+        ? "Remove from your List"
+        : "Add to your List"
       }
     </button>
   );

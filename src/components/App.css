@@ -136,6 +136,8 @@ table {
 :root {
 	--white: #ffffff;
 	--black: #28282a;
+	--red: #ff4646;
+	--darkerRed: #e03737;
 	--primaryColor: #d2aa4a;
 	--primaryLighterColor: #fcc46d;
 	--secondaryColor: #1d8d44;

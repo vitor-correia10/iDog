@@ -1,8 +1,8 @@
 import React from "react";
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
-import { addImage } from "../../Actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addImage, removeImage } from "../../Actions";
 
 //components
 import AddToListButton from "../addToListButton";
@@ -10,13 +10,25 @@ import "./DogsImages.css";
 
 const DogsImages = ({dogsData}) => {
   const dispatch = useDispatch();
+  const myListObject = useSelector((state) => state.myListReducer);
+  const myListArray = Object.keys(myListObject)
+
+  console.log('myListArray', myListArray);
   
   //update images' list with URLs
   const addToList = (url) =>{
-    dispatch(
-      addImage( url )
+    let findUrl = myListArray.find(element => element === url);
+
+    if (findUrl){
+      dispatch(
+        removeImage( url )
+      );
+    } else {
+      dispatch(
+        addImage( url )
       );
     }
+  }
   
   return (
     <main className="images-container">
