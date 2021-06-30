@@ -1,7 +1,7 @@
 import React from "react";
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 //components
 import FetchDogs from "../dropdownBreedList";

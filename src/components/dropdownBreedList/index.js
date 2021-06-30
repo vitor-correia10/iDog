@@ -19,7 +19,7 @@ function objectData(obj) {
 
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log('✅ API Test succeeded');
   } else {
     console.log(
       `⛔️ Expected “${result}” to equal “${value}”`
