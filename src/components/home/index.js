@@ -4,7 +4,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 //components
-import FetchDogs from "../dropdownBreedList";
+import DropdownBreedList from "../dropdownBreedList";
+import RandomImage from "../randomImage";
 import DogsImages from "../dogsImages";
 
 //style
@@ -15,11 +16,15 @@ const Home = () => {
   return (
     <>
       <div className="top-menu">
-        <FetchDogs />
+        <DropdownBreedList />
       </div>
-      <DogsImages 
-        dogsData={breedImages}
-      />
+      {
+        breedImages.length ?
+          <DogsImages 
+            dogsData={breedImages}
+          /> : 
+          <RandomImage />
+      }
     </>
   )
 }

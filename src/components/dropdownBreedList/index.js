@@ -4,7 +4,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 //components
-import Loading from "../loading";
 import { selectedBreed } from "../../Actions";
 import "./DropdownBreedList.css";
 
@@ -38,7 +37,6 @@ function expect(result, value, name) {
 //end test
 
 const DropdownBreedList = () => {
-  const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
   const dispatch = useDispatch();
   const numOfImages = 12;
@@ -56,7 +54,6 @@ const DropdownBreedList = () => {
         
         if (dogBreeds.status === "success"){
           await makeBreedList(dogBreeds.message);
-          setLoading(false);
         }
 
       } catch (err) {
@@ -98,10 +95,6 @@ const DropdownBreedList = () => {
 
     //call breed images - Redux test
     expect(breedImageArray(dogImagesArr), dogImagesArr.length > 0, "Breed Images");
-  }
-
-  if (loading) {
-    return <Loading />;
   }
 
   return (

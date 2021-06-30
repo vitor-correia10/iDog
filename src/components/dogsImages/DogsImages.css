@@ -10,7 +10,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	perspective: 1000px;
+}
+
+@media (min-width: 499px) {
+	.box-image {
+		perspective: 1000px;
+	}
 }
 
 .background-image {
