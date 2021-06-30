@@ -8,9 +8,8 @@ import { addImage } from "../../Actions";
 import AddToListButton from "../addToListButton";
 import "./DogsImages.css";
 
-const DogsImages = () => {
+const DogsImages = ({dogsData}) => {
   const dispatch = useDispatch();
-  const breedImages = useSelector((state) => state.breedReducer.images);
   
   //update images' list with URLs
   const addToList = (url) =>{
@@ -22,7 +21,7 @@ const DogsImages = () => {
   return (
     <main className="images-container">
       {
-        breedImages.map((dogImage,i) => {
+        dogsData.map((dogImage,i) => {
           return (
             <div key={i} className="box-image">
               <div className="background-image" 

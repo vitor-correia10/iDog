@@ -1,5 +1,8 @@
 import React from "react";
 
+//redux
+import { useSelector, useDispatch } from "react-redux";
+
 //components
 import FetchDogs from "../dropdownBreedList";
 import DogsImages from "../dogsImages";
@@ -8,12 +11,15 @@ import DogsImages from "../dogsImages";
 import "./Home.css";
 
 const Home = () => {
+  const breedImages = useSelector((state) => state.breedReducer.images);
   return (
     <>
       <div className="top-menu">
         <FetchDogs />
       </div>
-      <DogsImages />
+      <DogsImages 
+        dogsData={breedImages}
+      />
     </>
   )
 }

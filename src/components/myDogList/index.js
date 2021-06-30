@@ -4,7 +4,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 //components
+import DogsImages from '../dogsImages';
 import "./MyDogList.css";
+
 
 const MyDogList = () => {
   const myListObject = useSelector((state) => state.myListReducer);
@@ -12,7 +14,9 @@ const MyDogList = () => {
 
   return (
     <main className="dogs-list-container">
-      testing
+      <DogsImages 
+        dogsData={myListArray}
+      />
     </main>
   );
 };
