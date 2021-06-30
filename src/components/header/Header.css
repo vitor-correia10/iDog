@@ -31,7 +31,7 @@ img.logo {
 
 .image-count {
 	position: absolute;
-	background: var(--primaryColor);
+	background: var(--red);
 	top: 22px;
 	right: 22px;
 	font-size: 12px;

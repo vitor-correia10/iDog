@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //redux
 import { useSelector } from "react-redux";
@@ -14,9 +15,16 @@ const MyDogList = () => {
 
   return (
     <main className="dogs-list-container">
-      <DogsImages 
-        dogsData={myListArray}
-      />
+      { myListArray.length ? (
+        <DogsImages 
+          dogsData={myListArray}
+        />) : (
+          <div className="empty-list-message">
+            <p>You do not have any image in your list yet!</p>
+            <p> Click <Link className="styled-link" to="/">here</Link> to return home.</p>
+          </div>
+        )
+      }
     </main>
   );
 };

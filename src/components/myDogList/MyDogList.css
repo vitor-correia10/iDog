@@ -1,3 +1,7 @@
 .dogs-list-container {
 	padding-top: 120px;
 }
+
+.empty-list-message {
+	text-align: center;
+}
