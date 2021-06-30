@@ -5,3 +5,13 @@ export const selectedBreed = (value, key) => {
       value,
   };
 };
+
+export const addImage = (url) => ({
+  type: "ADD-IMAGE",
+  url: url,
+});
+
+export const removeImage = (url) => ({
+  type: "REMOVE-IMAGE",
+  url,
+});

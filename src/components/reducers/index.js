@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
-import BreedData from "./Breed-Reducer";
+import breedReducer from "./breed";
+import myListReducer from "./myList";
 
 const allReducers = combineReducers({
-  BreedData,
+  breedReducer,
+  myListReducer,
 });
 
 export default allReducers;

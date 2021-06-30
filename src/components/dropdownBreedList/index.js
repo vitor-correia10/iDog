@@ -71,8 +71,8 @@ const DropdownBreedList = () => {
 
   return (
     <div className="breed-list">
-      <select className="breed-selector" onChange={e => handleBreed(e)}>
-        <option selected disabled value="Choose a dog breed">Choose a dog breed</option>
+      <select className="breed-selector" defaultValue="Choose a dog breed" onChange={e => handleBreed(e)}>
+        <option disabled>Choose a dog breed</option>
         {
           breedList.map((breed,i) => {
             return (

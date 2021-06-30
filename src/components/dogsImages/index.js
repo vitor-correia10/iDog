@@ -1,9 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { addImage } from "../../Actions";
+
+//components
+import AddToListButton from "../addToListButton";
 import "./DogsImages.css";
 
 const DogsImages = () => {
-  const breedImages = useSelector((state) => state.BreedData.images);
+  const dispatch = useDispatch();
+  const breedImages = useSelector((state) => state.breedReducer.images);
+  
+  //update images' list with URLs
+  const addToList = (url) =>{
+    dispatch(
+      addImage( url )
+      );
+    }
+  
   return (
     <main className="images-container">
       {
@@ -13,7 +28,11 @@ const DogsImages = () => {
               <div className="background-image" 
                 style={{ backgroundImage: `url(${dogImage})`}}>
               </div>
-              <button className="add-to-list" type="button">Add to my list</button>
+              <AddToListButton 
+                url={dogImage} 
+                addToList={addToList} 
+                onClick={() => addToList(dogImage)}
+              />
             </div>
           )
         })

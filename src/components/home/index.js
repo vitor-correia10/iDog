@@ -1,8 +1,7 @@
 import React from "react";
 
 //components
-import Header from "../header";
-import FetchDogs from "../fetchDogs";
+import FetchDogs from "../dropdownBreedList";
 import DogsImages from "../dogsImages";
 
 //style
@@ -12,7 +11,6 @@ const Home = () => {
   return (
     <>
       <div className="top-menu">
-        <Header />
         <FetchDogs />
       </div>
       <DogsImages />

@@ -8,14 +8,20 @@ import "./App.css";
 
 //Components
 import Home from "./home";
+import MyDogList from "./myDogList";
 import FourOhFour from "./fourOhFour";
+import Header from "./header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Home/>
+        </Route>
+        <Route path="/my-list">
+          <MyDogList/>
         </Route>
         <Route path="*">
           <FourOhFour />
