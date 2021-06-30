@@ -1,12 +1,14 @@
 import React from "react";
+
+//redux
 import { useDispatch } from "react-redux";
 
 //components
 import Loading from "../loading";
 import { selectedBreed } from "../../Actions";
-import "./FetchDogs.css";
+import "./DropdownBreedList.css";
 
-const FetchDogs = () => {
+const DropdownBreedList = () => {
   const [loading, setLoading] = React.useState(true);
   const [breedList, setBreedList] = React.useState([]);
   const dispatch = useDispatch();
@@ -83,4 +85,4 @@ const FetchDogs = () => {
   );
 };
 
-export default FetchDogs;
+export default DropdownBreedList;
