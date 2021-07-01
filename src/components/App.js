@@ -4,13 +4,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import "./App.css";
 
+//style
+import "./App.css";
 //Components
 import Home from "./home";
-import MyDogList from "./myDogList";
-import FourOhFour from "./fourOhFour";
 import Header from "./header";
+import MyDogList from "./myDogList";
+import Footer from "./footer";
+import FourOhFour from "./fourOhFour";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <FourOhFour />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
