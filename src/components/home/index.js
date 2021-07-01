@@ -13,11 +13,17 @@ import "./Home.css";
 
 const Home = () => {
   const breedImages = useSelector((state) => state.breedReducer.images);
+  const breed = useSelector((state) => state.breedReducer.breed);
   return (
     <>
       <div className="top-menu">
         <DropdownBreedList />
       </div>
+        {
+          breed ? (
+            <h1>{breed}</h1>
+            ) : ""
+        }
       {
         breedImages.length ?
           <DogsImages 
