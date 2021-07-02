@@ -1,5 +1,6 @@
 .dogs-list-container {
 	padding-top: 120px;
+	min-height: calc(100vh - 230px);
 }
 
 .empty-list-message {
